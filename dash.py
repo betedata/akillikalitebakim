@@ -701,7 +701,7 @@ with tab_live:
             </div>""", unsafe_allow_html=True)
 
             if proc_img is not None:
-                cam_ph.image(proc_img, caption="YOLOv8 Hata Lokalizasyonu", use_container_width=True)
+                cam_ph.image(proc_img, caption="YOLOv8 Hata Lokalizasyonu", use_column_width=True)
                 if label == "Defect":
                     alert_ph.markdown(f"""
                     <div class="alert-banner alert-critical">
