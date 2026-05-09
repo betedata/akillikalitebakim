@@ -29,7 +29,7 @@ TEST_IMAGE_FOLDER  = "test_image"
 CLR_NORMAL   = "#1D9E75"   # teal-400
 CLR_WARNING  = "#BA7517"   # amber-400
 CLR_CRITICAL = "#E24B4A"   # red-400
-CLR_GRID     = "rgba(255,255,255,0.06)"
+CLR_GRID     = "rgba(100,100,100,0.20)"
 
 # ──────────────────────────────────────────────────────────
 # PAGE SETUP
@@ -68,30 +68,47 @@ if dialog_decorator is not None:
                 display: none !important;
             }
         </style>
-        <div style='text-align: center; margin-bottom: 16px;'>
-            <h3 style='color: #f0ede8; margin-bottom: 4px; font-weight: 600;'>Akıllı Kalite Kontrol Sistemi Otonom Hata Tespiti </h3>
-            
-        </div>
+        <div class='popup-subtitle'>Akıllı Kalite Kontrol Sistemi Otonom Hata Tespiti</div>
         """, unsafe_allow_html=True)
         
         st.info("Bu sistem, üretim hatalarını **insan müdahalesi gerektirmeksizin** gerçek zamanlı olarak tespit etmek için geliştirilmiştir.")
         
         st.markdown("""
-        <div style='background: #1a1a1a; padding: 14px; border-radius: 8px; border: 1px solid rgba(29, 158, 117, 0.3); margin-bottom: 10px;'>
+        <style>
+        .popup-card {
+            padding: 14px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .popup-card p { font-size: 13px; line-height: 1.4; margin: 0; }
+        /* Dark */
+        @media (prefers-color-scheme: dark) {
+            .popup-card { background: var(--secondary-background-color, #1e1e1e); color: var(--text-color, #ccc); }
+        }
+        /* Streamlit dark */
+        [data-theme="dark"] .popup-card { background: var(--secondary-background-color, #1e1e1e); color: var(--text-color, #ccc); }
+        /* Light */
+        [data-theme="light"] .popup-card { background: var(--secondary-background-color, #f0f2f6); color: var(--text-color, #374151); }
+        /* Fallback light (when no data-theme attr yet) */
+        .popup-card-light { background: var(--secondary-background-color, #f0f2f6); color: var(--text-color, #374151); }
+        /* Global override for popup cards */
+        .popup-card { background: var(--secondary-background-color, var(--bg-card)); color: var(--text-color, var(--text-secondary)); }
+        </style>
+        <div class='popup-card' style='border: 1px solid rgba(29, 158, 117, 0.35);'>
             <h5 style='color: #1D9E75; margin-top: 0; font-size: 15px; margin-bottom: 6px;'>📡 Katman 1: Sensör Analizi</h5>
-            <p style='font-size: 13px; color: #ccc; line-height: 1.4; margin: 0;'>Sıcaklık, tork ve devir verileri <b>Random Forest</b> yapay zekasıyla sürekli izlenir. Kritik anomalide kamera motoru tetiklenir.</p>
+            <p>Sıcaklık, tork ve devir verileri <b>Random Forest</b> yapay zekasıyla sürekli izlenir. Kritik anomalide kamera motoru tetiklenir.</p>
         </div>
         
-        <div style='background: #1a1a1a; padding: 14px; border-radius: 8px; border: 1px solid rgba(226, 75, 74, 0.3); margin-bottom: 12px;'>
+        <div class='popup-card' style='border: 1px solid rgba(226, 75, 74, 0.35); margin-bottom: 12px;'>
             <h5 style='color: #E24B4A; margin-top: 0; font-size: 15px; margin-bottom: 6px;'>📷 Katman 2: Görsel Analiz</h5>
-            <p style='font-size: 13px; color: #ccc; line-height: 1.4; margin: 0;'>Kamera devreye girer ve <b>YOLOv8n</b> AI modeli baskı yüzeyini tarayarak <i>stringing, warping, blob</i> hatalarını lokalize eder.</p>
+            <p>Kamera devreye girer ve <b>YOLOv8n</b> AI modeli baskı yüzeyini tarayarak <i>stringing, warping, blob</i> hatalarını lokalize eder.</p>
         </div>
         """, unsafe_allow_html=True)
         
         st.success("💡 **Dashboard**, her iki katmanı birleştirerek tek ekranda tam hakimiyet sunar.")
         
-        st.markdown("<div style='text-align: center; margin-top: 15px; margin-bottom: 10px; font-size: 13px; color: #888;'>Simülasyon başlatma komutunu onaylayın</div>", unsafe_allow_html=True)
-        if st.button("Simülasyonu Başlat ", type="primary", use_container_width=True):
+        st.markdown("<div style='text-align: center; margin-top: 15px; margin-bottom: 10px; font-size: 13px; color: inherit;'>Simülasyon başlatma komutunu onaylayın</div>", unsafe_allow_html=True)
+        if st.button("Simülasyonu Başlat ", type="primary", width='stretch'):
             st.session_state.run_sim_toggle = True
             st.session_state.popup_closed = True
             st.rerun()
@@ -103,147 +120,233 @@ else:
         st.info("betadata projesi: Lütfen simülasyonu kontrol panelinden başlatın.")
         st.session_state.popup_closed = True
 
-# Global CSS – applied once
+# Global CSS + JS theme detection
+# Streamlit puts data-theme on .stApp, NOT on :root.
+# We use JS to mirror it onto <html> so CSS variables work correctly.
 st.markdown("""
 <style>
-/* ── Typography & palette ─────────────────────────────── */
+/* == Google Fonts == */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; }
 
-html, body, [class*="css"] {
-    font-family: 'IBM Plex Sans', sans-serif;
+/* ═══ DARK THEME VARIABLES (default / fallback) ═══ */
+:root {
+    --bg-card:        var(--background-color, #1a1a1a);
+    --bg-card2:       var(--secondary-background-color, #161616);
+    --border-col:     rgba(128,128,128,0.2);
+    --border-header:  rgba(128,128,128,0.2);
+    --text-primary:   var(--text-color, #f0ede8);
+    --text-secondary: var(--text-color, #aaaaaa);
+    --text-muted:     gray;
+    --tab-inactive:   gray;
+    --tab-active-txt: var(--text-color, #f0ede8);
+    --tab-active-bg:  var(--secondary-background-color, rgba(255,255,255,0.06));
+    --tab-border:     rgba(128,128,128,0.2);
+    --status-wait-bg: var(--secondary-background-color, rgba(255,255,255,0.04));
+    --status-wait-col:var(--text-color, #aaaaaa);
+    --status-wait-dot:#666;
+    --status-wait-bdr:rgba(128,128,128,0.2);
+    --alert-ok-bg:    rgba(29,158,117,.09);   --alert-ok-bdr:  rgba(29,158,117,.25);  --alert-ok-txt:   #4ec9a0;
+    --alert-crit-bg:  rgba(226,75,74,.10);    --alert-crit-bdr:rgba(226,75,74,.32);   --alert-crit-txt: #f08080;
+    --alert-info-bg:  rgba(55,138,221,.09);   --alert-info-bdr:rgba(55,138,221,.22);  --alert-info-txt: #82b8f5;
 }
 
-/* ── Remove default Streamlit chrome ─────────────────── */
+/* ═══ LIGHT THEME VARIABLES ═══ */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-card:        #f0f2f6;
+        --bg-card2:       #e4e8f0;
+        --border-col:     rgba(0,0,0,0.12);
+        --border-header:  rgba(0,0,0,0.12);
+        --text-primary:   #0f172a;
+        --text-secondary: #374151;
+        --text-muted:     #4b5563;
+        --tab-inactive:   #374151;
+        --tab-active-txt: #0f172a;
+        --tab-active-bg:  rgba(0,0,0,0.07);
+        --tab-border:     rgba(0,0,0,0.12);
+        --status-wait-bg: rgba(0,0,0,0.04);
+        --status-wait-col:#1f2937;
+        --status-wait-dot:#9ca3af;
+        --status-wait-bdr:rgba(0,0,0,0.12);
+        --alert-ok-bg:    rgba(4,120,87,.10);    --alert-ok-bdr:  rgba(4,120,87,.35);    --alert-ok-txt:   #065f46;
+        --alert-crit-bg:  rgba(185,28,28,.10);  --alert-crit-bdr:rgba(185,28,28,.35);  --alert-crit-txt: #7f1d1d;
+        --alert-info-bg:  rgba(30,58,138,.08);  --alert-info-bdr:rgba(30,58,138,.30);  --alert-info-txt: #1e3a8a;
+    }
+}
+
+html[data-theme="light"],
+.stApp[data-theme="light"] ~ * ,
+[data-theme="light"] {
+    --bg-card:        #f0f2f6;
+    --bg-card2:       #e4e8f0;
+    --border-col:     rgba(0,0,0,0.12);
+    --border-header:  rgba(0,0,0,0.12);
+    --text-primary:   #0f172a;
+    --text-secondary: #374151;
+    --text-muted:     #4b5563;
+    --tab-inactive:   #374151;
+    --tab-active-txt: #0f172a;
+    --tab-active-bg:  rgba(0,0,0,0.07);
+    --tab-border:     rgba(0,0,0,0.12);
+    --status-wait-bg: rgba(0,0,0,0.04);
+    --status-wait-col:#1f2937;
+    --status-wait-dot:#9ca3af;
+    --status-wait-bdr:rgba(0,0,0,0.12);
+    --alert-ok-bg:    rgba(4,120,87,.10);    --alert-ok-bdr:  rgba(4,120,87,.35);    --alert-ok-txt:   #065f46;
+    --alert-crit-bg:  rgba(185,28,28,.10);  --alert-crit-bdr:rgba(185,28,28,.35);  --alert-crit-txt: #7f1d1d;
+    --alert-info-bg:  rgba(30,58,138,.08);  --alert-info-bdr:rgba(30,58,138,.30);  --alert-info-txt: #1e3a8a;
+}
+
+/* ── Streamlit chrome ── */
 #MainMenu, header, footer { visibility: hidden; }
 .block-container { padding: 1.5rem 2rem 3rem; max-width: 1400px; }
 
-/* ── App header ───────────────────────────────────────── */
+/* ── App header ── */
 .app-header {
     display: flex; align-items: center; gap: 14px;
     padding: 1rem 0 1.25rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid var(--border-header);
     margin-bottom: 1.5rem;
 }
-.app-header .badge {
-    font-size: 11px; font-weight: 600; letter-spacing: .05em;
-    text-transform: uppercase;
-    background: rgba(29,158,117,.15); color: #1D9E75;
-    border: 1px solid rgba(29,158,117,.3);
-    border-radius: 20px; padding: 3px 10px;
-}
 .app-header h1 {
-    font-size: 1.25rem; font-weight: 600;
-    color: #f0ede8; margin: 0; letter-spacing: -.01em;
+    font-size: 1.15rem; font-weight: 600;
+    color: var(--text-primary) !important;
+    margin: 0; letter-spacing: -.01em;
 }
-.app-header p { font-size: .8rem; color: #888; margin: 0; }
+.app-header p { font-size: .8rem; color: var(--text-secondary); margin: 0; }
+.app-header .uni-name  { font-size: 15px; font-weight: 600; color: #1D9E75; letter-spacing: 0.05em; }
+.app-header .uni-author { font-size: 15px; color: var(--text-secondary); font-weight: 500; }
 
-/* ── Section label ────────────────────────────────────── */
+/* ── Section labels ── */
 .section-label {
-    font-size: 10px; font-weight: 600; letter-spacing: .12em;
-    text-transform: uppercase; color: #666;
+    font-size: 10px; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-muted) !important;
     margin: 0 0 .6rem;
 }
 
-/* ── KPI cards ────────────────────────────────────────── */
+/* ── KPI cards ── */
 .kpi-card {
-    background: #1a1a1a;
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 10px;
-    padding: .9rem 1.1rem;
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-col);
+    border-radius: 10px; padding: .9rem 1.1rem;
     position: relative; overflow: hidden;
 }
 .kpi-card .kpi-label {
-    font-size: 11px; color: #666;
-    font-weight: 500; letter-spacing: .04em;
-    text-transform: uppercase; margin-bottom: 6px;
+    font-size: 11px; font-weight: 600; letter-spacing: .05em;
+    text-transform: uppercase;
+    color: var(--text-muted) !important;
+    margin-bottom: 6px;
 }
 .kpi-card .kpi-value {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 1.7rem; font-weight: 500;
-    color: #f0ede8; line-height: 1;
+    color: var(--text-primary) !important; line-height: 1;
 }
-.kpi-card .kpi-unit {
-    font-size: .75rem; color: #666; margin-left: 4px;
-}
-.kpi-card .kpi-delta {
-    font-size: .75rem; margin-top: 6px;
-}
+.kpi-card .kpi-unit  { font-size:.75rem; color:var(--text-muted); margin-left:4px; }
+.kpi-card .kpi-delta { font-size:.75rem; margin-top:6px; }
 .kpi-card .kpi-bar {
-    position: absolute; bottom: 0; left: 0; height: 3px;
-    border-radius: 0 0 10px 10px;
-    transition: width .4s ease;
+    position:absolute; bottom:0; left:0; height:3px;
+    border-radius:0 0 10px 10px; transition:width .4s ease;
 }
 
-/* ── Status pill ──────────────────────────────────────── */
+/* ── Status pill ── */
 .status-pill {
-    display: inline-flex; align-items: center; gap: 7px;
-    font-size: 13px; font-weight: 600;
-    border-radius: 24px; padding: 8px 16px;
-    letter-spacing: .01em;
+    display:inline-flex; align-items:center; gap:7px;
+    font-size:13px; font-weight:600;
+    border-radius:24px; padding:8px 16px; letter-spacing:.01em;
 }
-.status-normal   { background: rgba(29,158,117,.12); color: #1D9E75; border: 1px solid rgba(29,158,117,.25); }
-.status-anomaly  { background: rgba(226,75,74,.12);  color: #E24B4A; border: 1px solid rgba(226,75,74,.3);  }
-.status-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    display: inline-block;
-}
-.dot-normal  { background: #1D9E75; animation: pulse-green 2s infinite; }
-.dot-anomaly { background: #E24B4A; animation: pulse-red   1s infinite; }
+.status-normal  { background:rgba(29,158,117,.12); color:#1D9E75; border:1px solid rgba(29,158,117,.25); }
+.status-anomaly { background:rgba(226,75,74,.12);  color:#E24B4A; border:1px solid rgba(226,75,74,.3);  }
+.status-dot { width:8px; height:8px; border-radius:50%; display:inline-block; }
+.dot-normal  { background:#1D9E75; animation:pulse-green 2s infinite; }
+.dot-anomaly { background:#E24B4A; animation:pulse-red   1s infinite; }
 @keyframes pulse-green { 0%,100%{box-shadow:0 0 0 0 rgba(29,158,117,.4)} 50%{box-shadow:0 0 0 5px rgba(29,158,117,0)} }
 @keyframes pulse-red   { 0%,100%{box-shadow:0 0 0 0 rgba(226,75,74,.6)}  50%{box-shadow:0 0 0 6px rgba(226,75,74,0)} }
 
-/* ── Alert box ────────────────────────────────────────── */
+/* ── Alert banners ── */
 .alert-banner {
-    border-radius: 8px; padding: 12px 16px;
-    font-size: 13px; font-weight: 500;
-    display: flex; align-items: flex-start; gap: 10px;
-    line-height: 1.5;
+    border-radius:8px; padding:12px 16px; font-size:13px; font-weight:500;
+    display:flex; align-items:flex-start; gap:10px; line-height:1.5;
 }
-.alert-critical { background: rgba(226,75,74,.1); border: 1px solid rgba(226,75,74,.3); color: #e88; }
-.alert-ok       { background: rgba(29,158,117,.08); border: 1px solid rgba(29,158,117,.2); color: #6dc; }
-.alert-info     { background: rgba(55,138,221,.08); border: 1px solid rgba(55,138,221,.2); color: #7bc; }
+.alert-critical { background:var(--alert-crit-bg); border:1px solid var(--alert-crit-bdr); color:var(--alert-crit-txt); }
+.alert-ok       { background:var(--alert-ok-bg);   border:1px solid var(--alert-ok-bdr);   color:var(--alert-ok-txt);   }
+.alert-info     { background:var(--alert-info-bg);  border:1px solid var(--alert-info-bdr);  color:var(--alert-info-txt);  }
 
-/* ── Control panel card ───────────────────────────────── */
+/* ── Control card ── */
 .control-card {
-    background: #161616;
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 12px;
-    padding: 1.25rem;
+    background:var(--bg-card2); border:1px solid var(--border-col);
+    border-radius:12px; padding:1.25rem;
 }
 
-/* ── Log table tweaks ─────────────────────────────────── */
-.stDataFrame { border-radius: 10px; overflow: hidden; }
+/* ── Data table ── */
+.stDataFrame { border-radius:10px; overflow:hidden; }
 
-/* ── Tab styling ──────────────────────────────────────── */
+/* ── Tabs ── */
 .stTabs [data-baseweb="tab-list"] {
-    gap: 4px;
-    background: transparent !important;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    padding-bottom: 0;
+    gap:4px; background:transparent !important;
+    border-bottom:1px solid var(--tab-border); padding-bottom:0;
 }
 .stTabs [data-baseweb="tab"] {
-    font-size: 13px; font-weight: 500;
-    padding: 8px 18px;
-    border-radius: 8px 8px 0 0;
-    color: #666;
+    font-size:13px; font-weight:500;
+    padding:8px 18px; border-radius:8px 8px 0 0;
+    color:var(--tab-inactive) !important;
 }
 .stTabs [aria-selected="true"] {
-    color: #f0ede8 !important;
-    background: rgba(255,255,255,0.05) !important;
+    color:var(--tab-active-txt) !important;
+    background:var(--tab-active-bg) !important;
 }
 
-/* ── Streamlit toggle override ────────────────────────── */
-.stToggle { margin: 0 !important; }
+/* ── Toggle ── */
+.stToggle { margin:0 !important; }
 
-/* ── Stat boxes in log tab ────────────────────────────── */
+/* ── Stat boxes ── */
 .stat-box {
-    background: #1a1a1a; border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 10px; padding: .9rem 1.1rem; text-align: center;
+    background:var(--bg-card); border:1px solid var(--border-col);
+    border-radius:10px; padding:.9rem 1.1rem; text-align:center;
 }
-.stat-box .stat-n { font-family: 'IBM Plex Mono', monospace; font-size: 2rem; font-weight: 500; color: #f0ede8; }
-.stat-box .stat-l { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: .08em; margin-top: 4px; }
+.stat-box .stat-n { font-family:'IBM Plex Mono',monospace; font-size:2rem; font-weight:500; color:var(--text-primary) !important; }
+.stat-box .stat-l { font-size:11px; color:var(--text-muted) !important; text-transform:uppercase; letter-spacing:.08em; margin-top:4px; }
+
+/* ── Popup cards ── */
+.popup-card {
+    padding:14px; border-radius:8px; margin-bottom:10px;
+    background: var(--bg-card); color: var(--text-secondary);
+}
+.popup-card h5 { margin-top:0; font-size:15px; margin-bottom:6px; }
+.popup-card p  { font-size:13px; line-height:1.4; margin:0; color: var(--text-secondary); }
+
+/* ── Popup subtitle text ── */
+.popup-subtitle {
+    text-align:center; margin-bottom:16px;
+    font-weight:600; font-size:1rem;
+    color: var(--text-primary);
+}
 </style>
+
+<script>
+(function() {
+    // Mirror Streamlit's data-theme from .stApp onto <html>
+    // so that CSS :root variables work correctly in all contexts.
+    function syncTheme() {
+        var stApp = document.querySelector('.stApp');
+        if (!stApp) return;
+        var theme = stApp.getAttribute('data-theme');
+        if (theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+        }
+    }
+    // Run immediately and watch for changes
+    syncTheme();
+    var observer = new MutationObserver(syncTheme);
+    observer.observe(document.body, { attributes: true, subtree: true, attributeFilter: ['data-theme'] });
+})();
+</script>
 """, unsafe_allow_html=True)
+
+
+
 
 
 # ──────────────────────────────────────────────────────────
@@ -264,12 +367,12 @@ st.markdown(f"""
 <div class="app-header">
     <div style="font-size:26px">🏭</div>
     <div>
-        <h1 style="font-size:18px; margin-bottom:4px; color:#f0ede8;">BETEDATA HAVELSAN SUIT PROGRAMI - AKILLI KALİTE KONTROL SİSTEMİ</h1>
+        <h1>BETEDATA HAVELSAN SUIT PROGRAMI - AKILLI KALİTE KONTROL SİSTEMİ</h1>
     </div>
     <div style="margin-left:auto; display:flex; align-items:center; gap:14px; text-align:right;">
         <div style="line-height: 1.4;">
-            <div style="font-size: 15px; font-weight: 600; color: #1D9E75; letter-spacing: 0.05em;">MUĞLA SITKI KOÇMAN ÜNİVERSİTESİ</div>
-            <div style="font-size: 15px; color: #888; font-weight: 500;">Betül YENİTOPCU & Eda TAŞKAN</div>
+            <div class="uni-name">MUĞLA SITKI KOÇMAN ÜNİVERSİTESİ</div>
+            <div class="uni-author">Betül YENİTOPCU & Eda TAŞKAN</div>
         </div>
         {logo_html}
     </div>
@@ -414,15 +517,17 @@ def load_error_logs():
 # CHART HELPERS (consistent dark theme)
 # ──────────────────────────────────────────────────────────
 DARK_LAYOUT = dict(
-    template="plotly_dark",
+    template="plotly_white",
     paper_bgcolor="rgba(0,0,0,0)",
     plot_bgcolor="rgba(0,0,0,0)",
     margin=dict(l=0, r=0, t=28, b=0),
-    font=dict(family="IBM Plex Sans", size=12, color="#999"),
-    xaxis=dict(showgrid=True, gridcolor=CLR_GRID, zeroline=False),
-    yaxis=dict(showgrid=True, gridcolor=CLR_GRID, zeroline=False),
-    legend=dict(orientation="h", y=-0.12, x=0, font_size=11),
-    title_font=dict(size=13, color="#ccc"),
+    font=dict(family="IBM Plex Sans", size=12, color="#555555"),
+    xaxis=dict(showgrid=True, gridcolor="rgba(120,120,120,0.25)", zeroline=False,
+               tickfont=dict(color="#555555"), title_font=dict(color="#555555")),
+    yaxis=dict(showgrid=True, gridcolor="rgba(120,120,120,0.25)", zeroline=False,
+               tickfont=dict(color="#555555"), title_font=dict(color="#555555")),
+    legend=dict(orientation="h", y=-0.12, x=0, font=dict(size=11, color="#555555")),
+    title_font=dict(size=13, color="#444444"),
 )
 
 SENSOR_COLORS = {
@@ -471,15 +576,15 @@ def build_gauge(value: float, title: str, min_v: float, max_v: float,
     fig = go.Figure(go.Indicator(
         mode="gauge+number",
         value=value,
-        number=dict(suffix=unit, font=dict(size=22, color="#f0ede8", family="IBM Plex Mono")),
-        title=dict(text=title, font=dict(size=12, color="#888")),
+        number=dict(suffix=unit, font=dict(size=22, color="#333333", family="IBM Plex Mono")),
+        title=dict(text=title, font=dict(size=12, color="#555555")),
         gauge=dict(
-            axis=dict(range=[min_v, max_v], tickcolor="#555", tickfont=dict(size=10, color="#666")),
+            axis=dict(range=[min_v, max_v], tickcolor="#999", tickfont=dict(size=10, color="#666666")),
             bar=dict(color=bar_color, thickness=0.22),
             bgcolor="rgba(0,0,0,0)",
             borderwidth=0,
             steps=[
-                dict(range=[min_v, warn], color="rgba(255,255,255,0.04)"),
+                dict(range=[min_v, warn], color="rgba(128,128,128,0.07)"),
                 dict(range=[warn, crit],  color="rgba(186,117,23,0.08)"),
                 dict(range=[crit, max_v], color="rgba(226,75,74,0.1)"),
             ],
@@ -575,17 +680,17 @@ with tab_live:
         # Telemetry chart
         chart_ph.plotly_chart(
             build_telemetry_chart(history_df),
-            use_container_width=True,
+            width='stretch',
             key=f"telemetry_{render_key}",
         )
 
         # Gauges
         gauge_temp.plotly_chart(build_gauge(obj, "Nesne Sıc.", 0, 120, 55, 80, "°C"),
-                                use_container_width=True, key=f"gauge_temp_{render_key}")
+                                width='stretch', key=f"gauge_temp_{render_key}")
         gauge_tork.plotly_chart(build_gauge(sim_torque, "Tork", 0, 90, 55, 70, " Nm"),
-                                use_container_width=True, key=f"gauge_tork_{render_key}")
+                                width='stretch', key=f"gauge_tork_{render_key}")
         gauge_rpm.plotly_chart(build_gauge(sim_rpm, "Devir", 0, 1600, 1300, 1500, " RPM"),
-                               use_container_width=True, key=f"gauge_rpm_{render_key}")
+                               width='stretch', key=f"gauge_rpm_{render_key}")
 
         # Status & vision
         if sensor_pred == 1:
@@ -596,7 +701,7 @@ with tab_live:
             </div>""", unsafe_allow_html=True)
 
             if proc_img is not None:
-                cam_ph.image(proc_img, caption="YOLOv8 Hata Lokalizasyonu", use_column_width=True)
+                cam_ph.image(proc_img, caption="YOLOv8 Hata Lokalizasyonu", width='stretch')
                 if label == "Defect":
                     alert_ph.markdown(f"""
                     <div class="alert-banner alert-critical">
@@ -631,8 +736,8 @@ with tab_live:
             render_dashboard(st.session_state.last_sim_state, render_key="idle")
         else:
             status_box.markdown("""
-            <div class="status-pill" style="background:rgba(255,255,255,0.04);color:#555;border:1px solid rgba(255,255,255,0.07)">
-                <span class="status-dot" style="background:#444"></span>
+            <div class="status-pill" style="background:var(--status-wait-bg);color:var(--status-wait-col);border:1px solid var(--status-wait-bdr)">
+                <span class="status-dot" style="background:var(--status-wait-dot)"></span>
                 Bekleniyor
             </div>""", unsafe_allow_html=True)
             cam_ph.markdown("""
@@ -735,7 +840,7 @@ with tab_logs:
                 pie_layout = DARK_LAYOUT.copy()
                 pie_layout.update(showlegend=False, margin=dict(l=0, r=0, t=10, b=0), height=260)
                 fig_pie.update_layout(**pie_layout)
-                st.plotly_chart(fig_pie, use_container_width=True)
+                st.plotly_chart(fig_pie, width='stretch')
 
             with bar_col:
                 st.markdown('<p class="section-label">Olay Sayıları</p>', unsafe_allow_html=True)
@@ -751,7 +856,7 @@ with tab_logs:
                     margin=dict(l=0, r=0, t=10, b=0), height=260,
                 )
                 fig_bar.update_layout(**bar_layout)
-                st.plotly_chart(fig_bar, use_container_width=True)
+                st.plotly_chart(fig_bar, width='stretch')
 
         st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
 
@@ -769,13 +874,13 @@ with tab_logs:
             ts_layout = DARK_LAYOUT.copy()
             ts_layout.update(margin=dict(l=0, r=0, t=10, b=0), height=200)
             fig_ts.update_layout(**ts_layout)
-            st.plotly_chart(fig_ts, use_container_width=True)
+            st.plotly_chart(fig_ts, width='stretch')
 
         # ── Data table ──────────────────────────────────────
         st.markdown('<p class="section-label">Tüm Kayıtlar</p>', unsafe_allow_html=True)
         st.dataframe(
             log_df.sort_values("zaman", ascending=False),
-            use_container_width=True,
+            width='stretch',
             hide_index=True,
             column_config={
                 "zaman":                  st.column_config.TextColumn("Zaman"),

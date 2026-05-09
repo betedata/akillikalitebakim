@@ -171,3 +171,112 @@
 2026-03-30T19:25:57,6,Sensör kritik – görüntü temiz,Kritik telemetri var; YOLO bu karede kusur görmüyor (takip önerilir).,CRITICAL,Normal,98.88,77.31,1122.03
 2026-03-30T19:26:00,7,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,103.44,89.57,1108.25
 2026-03-30T19:26:04,9,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,103.28,85.49,1158.5
+2026-05-09T13:08:49,3,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,103.56,81.5,1104.94
+2026-05-09T13:08:53,4,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,97.7,87.65,1179.77
+2026-05-09T13:36:47,4,Sensör kritik – görüntü temiz,Kritik telemetri var; YOLO bu karede kusur görmüyor (takip önerilir).,CRITICAL,Normal,96.01,85.69,1128.43
+2026-05-09T13:36:51,6,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,99.46,87.1,1198.16
+2026-05-09T13:36:55,7,Sensör kritik – görüntü temiz,Kritik telemetri var; YOLO bu karede kusur görmüyor (takip önerilir).,CRITICAL,Normal,102.78,80.42,1164.73
+2026-05-09T13:36:59,9,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,101.53,83.79,1101.94
+2026-05-09T13:37:03,11,Sensör kritik – görüntü temiz,Kritik telemetri var; YOLO bu karede kusur görmüyor (takip önerilir).,CRITICAL,Normal,98.91,84.23,1188.76
+2026-05-09T13:37:07,13,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,103.42,88.82,1154.78
+2026-05-09T13:37:12,15,Sensör kritik – görüntü temiz,Kritik telemetri var; YOLO bu karede kusur görmüyor (takip önerilir).,CRITICAL,Normal,98.29,82.24,1110.94
+2026-05-09T13:37:18,20,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,102.26,81.15,1172.0
+2026-05-09T13:37:27,27,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,104.92,79.12,1165.44
+2026-05-09T13:37:32,30,Sensör kritik – görüntü temiz,Kritik telemetri var; YOLO bu karede kusur görmüyor (takip önerilir).,CRITICAL,Normal,103.07,76.68,1166.34
+2026-05-09T13:37:35,31,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,104.0,82.43,1130.73
+2026-05-09T13:37:41,35,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,95.69,83.61,1180.29
+2026-05-09T13:37:50,43,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,96.44,82.79,1118.36
+2026-05-09T13:39:13,8,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,95.39,83.81,1124.52
+2026-05-09T13:39:17,9,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,97.25,81.37,1162.5
+2026-05-09T13:39:23,13,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,95.56,82.93,1107.7
+2026-05-09T13:39:31,20,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,103.82,80.81,1161.73
+2026-05-09T13:39:44,31,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,104.65,84.31,1154.04
+2026-05-09T13:39:50,35,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,96.17,76.08,1197.19
+2026-05-09T13:39:54,37,Sensör kritik – görüntü temiz,Kritik telemetri var; YOLO bu karede kusur görmüyor (takip önerilir).,CRITICAL,Normal,101.67,82.93,1142.56
+2026-05-09T13:39:59,40,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,102.38,84.34,1124.19
+2026-05-09T13:40:13,53,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,103.8,86.53,1185.79
+2026-05-09T13:40:24,64,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,104.72,87.9,1119.75
+2026-05-09T13:40:33,71,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,97.5,89.47,1168.17
+2026-05-09T13:40:41,78,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,98.01,89.75,1143.44
+2026-05-09T13:40:49,84,Sensör kritik – görüntü temiz,Kritik telemetri var; YOLO bu karede kusur görmüyor (takip önerilir).,CRITICAL,Normal,98.92,79.33,1155.95
+2026-05-09T13:40:52,85,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,101.26,79.74,1131.65
+2026-05-09T13:40:55,86,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,101.61,76.31,1187.15
+2026-05-09T13:41:02,91,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,96.14,78.6,1181.91
+2026-05-09T13:42:04,1,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,104.43,79.91,1112.23
+2026-05-09T13:42:07,2,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,96.91,87.09,1198.46
+2026-05-09T13:42:10,3,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,98.49,88.56,1161.02
+2026-05-09T13:42:15,6,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,104.9,85.7,1116.44
+2026-05-09T13:49:29,7,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,103.9,87.62,1179.84
+2026-05-09T13:49:46,23,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,99.97,83.07,1189.3
+2026-05-09T13:49:52,27,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,104.61,89.5,1179.43
+2026-05-09T13:49:58,31,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,104.88,83.24,1185.83
+2026-05-09T13:50:02,32,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,101.05,84.34,1154.96
+2026-05-09T13:50:07,35,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,98.64,88.11,1190.22
+2026-05-09T13:50:10,0,Sensör kritik – görüntü temiz,Kritik telemetri var; YOLO bu karede kusur görmüyor (takip önerilir).,CRITICAL,Normal,100.96,76.84,1129.29
+2026-05-09T13:50:19,7,Sensör kritik – görüntü temiz,Kritik telemetri var; YOLO bu karede kusur görmüyor (takip önerilir).,CRITICAL,Normal,97.66,88.95,1194.41
+2026-05-09T13:50:23,8,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,102.58,84.01,1129.5
+2026-05-09T13:50:27,10,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,95.1,83.73,1172.3
+2026-05-09T13:50:32,12,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,101.34,81.79,1172.42
+2026-05-09T13:50:33,59,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,103.35,85.44,1192.87
+2026-05-09T13:50:35,13,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,101.73,82.31,1135.23
+2026-05-09T13:50:36,60,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,98.02,75.21,1125.67
+2026-05-09T13:50:41,63,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,100.48,80.43,1103.21
+2026-05-09T13:50:43,19,Sensör kritik – görüntü temiz,Kritik telemetri var; YOLO bu karede kusur görmüyor (takip önerilir).,CRITICAL,Normal,99.75,87.65,1146.76
+2026-05-09T13:50:47,67,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,99.84,77.31,1155.68
+2026-05-09T13:50:53,27,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,102.1,86.33,1118.24
+2026-05-09T13:50:54,72,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,96.1,82.27,1156.21
+2026-05-09T13:50:58,74,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,100.48,79.08,1100.12
+2026-05-09T13:50:59,32,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,96.26,76.22,1154.36
+2026-05-09T13:51:06,37,Sensör kritik – görüntü temiz,Kritik telemetri var; YOLO bu karede kusur görmüyor (takip önerilir).,CRITICAL,Normal,99.65,76.88,1102.38
+2026-05-09T13:51:10,85,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,95.94,88.09,1144.12
+2026-05-09T13:51:14,43,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,96.82,82.95,1104.28
+2026-05-09T13:51:16,89,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,103.03,83.2,1199.95
+2026-05-09T13:51:17,44,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,100.46,82.78,1164.33
+2026-05-09T13:51:21,46,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,99.28,81.67,1150.29
+2026-05-09T13:51:22,94,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,102.48,80.67,1190.09
+2026-05-09T13:51:27,97,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,102.5,82.85,1137.14
+2026-05-09T13:51:29,53,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,99.15,80.78,1155.53
+2026-05-09T13:51:31,99,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,99.49,75.02,1142.02
+2026-05-09T13:54:50,1,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,101.29,81.0,1140.44
+2026-05-09T13:54:55,4,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,99.83,87.35,1141.24
+2026-05-09T13:57:57,0,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,98.02,88.73,1135.13
+2026-05-09T13:58:02,3,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,102.94,81.28,1114.32
+2026-05-09T13:59:50,8,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,97.83,85.75,1167.45
+2026-05-09T14:00:04,2,Sensör kritik – görüntü temiz,Kritik telemetri var; YOLO bu karede kusur görmüyor (takip önerilir).,CRITICAL,Normal,99.32,82.11,1104.8
+2026-05-09T14:00:09,5,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,97.52,76.82,1176.58
+2026-05-09T14:05:17,0,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,99.29,85.06,1154.47
+2026-05-09T14:08:52,4,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,102.95,80.36,1128.27
+2026-05-09T14:08:57,7,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,102.44,82.33,1114.3
+2026-05-09T14:09:03,11,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,99.31,77.31,1101.87
+2026-05-09T14:09:10,16,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,103.46,82.57,1157.89
+2026-05-09T14:09:31,38,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,95.45,89.32,1114.64
+2026-05-09T14:09:35,40,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,100.86,82.63,1171.46
+2026-05-09T14:09:38,41,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,95.7,84.35,1146.76
+2026-05-09T14:09:41,42,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,98.4,89.63,1140.84
+2026-05-09T14:09:49,48,Sensör kritik – görüntü temiz,Kritik telemetri var; YOLO bu karede kusur görmüyor (takip önerilir).,CRITICAL,Normal,99.04,81.23,1159.99
+2026-05-09T14:09:53,50,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,96.46,78.37,1100.47
+2026-05-09T14:09:57,52,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,96.24,82.92,1133.75
+2026-05-09T14:10:00,53,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,100.85,76.36,1183.26
+2026-05-09T14:10:06,57,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,98.11,81.69,1158.07
+2026-05-09T14:10:13,63,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,102.9,81.77,1142.78
+2026-05-09T14:10:16,64,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,104.88,89.18,1133.33
+2026-05-09T14:10:19,65,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,95.96,79.98,1196.19
+2026-05-09T14:10:23,66,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,98.71,76.71,1188.9
+2026-05-09T14:10:27,69,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,100.65,80.38,1107.1
+2026-05-09T14:10:31,70,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,98.17,89.16,1177.99
+2026-05-09T14:10:42,80,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,95.03,84.71,1179.66
+2026-05-09T14:10:45,81,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,101.87,75.69,1167.19
+2026-05-09T14:11:01,97,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,97.6,77.25,1128.41
+2026-05-09T14:11:04,98,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,101.24,81.88,1188.3
+2026-05-09T14:13:08,4,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,103.76,85.18,1112.83
+2026-05-09T14:13:11,5,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,104.93,89.75,1179.83
+2026-05-09T14:16:55,5,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,102.33,82.96,1161.88
+2026-05-09T14:16:59,7,Sensör kritik – görüntü temiz,Kritik telemetri var; YOLO bu karede kusur görmüyor (takip önerilir).,CRITICAL,Normal,97.32,82.57,1139.42
+2026-05-09T14:17:04,11,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,99.02,79.65,1136.96
+2026-05-09T14:17:15,21,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,99.12,79.24,1116.49
+2026-05-09T14:17:20,24,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,95.47,84.67,1104.54
+2026-05-09T14:17:26,28,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,102.45,85.4,1107.67
+2026-05-09T14:17:43,45,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,100.21,82.28,1157.09
+2026-05-09T14:17:48,48,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,96.81,80.39,1126.12
+2026-05-09T14:17:55,54,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,96.33,84.27,1177.58
+2026-05-09T14:17:59,56,Doğrulanmış hata (kritik sensör + görsel kusur),Modelin işaretlediği kritik profil YOLO ile kusur olarak doğrulandı.,CRITICAL,Defect,97.67,81.09,1184.09
