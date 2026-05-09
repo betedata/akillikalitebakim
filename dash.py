@@ -108,7 +108,7 @@ if dialog_decorator is not None:
         st.success("💡 **Dashboard**, her iki katmanı birleştirerek tek ekranda tam hakimiyet sunar.")
         
         st.markdown("<div style='text-align: center; margin-top: 15px; margin-bottom: 10px; font-size: 13px; color: inherit;'>Simülasyon başlatma komutunu onaylayın</div>", unsafe_allow_html=True)
-        if st.button("Simülasyonu Başlat ", type="primary", width='stretch'):
+        if st.button("Simülasyonu Başlat ", type="primary", use_container_width=True):
             st.session_state.run_sim_toggle = True
             st.session_state.popup_closed = True
             st.rerun()
@@ -680,17 +680,17 @@ with tab_live:
         # Telemetry chart
         chart_ph.plotly_chart(
             build_telemetry_chart(history_df),
-            width='stretch',
+            use_container_width=True,
             key=f"telemetry_{render_key}",
         )
 
         # Gauges
         gauge_temp.plotly_chart(build_gauge(obj, "Nesne Sıc.", 0, 120, 55, 80, "°C"),
-                                width='stretch', key=f"gauge_temp_{render_key}")
+                                use_container_width=True, key=f"gauge_temp_{render_key}")
         gauge_tork.plotly_chart(build_gauge(sim_torque, "Tork", 0, 90, 55, 70, " Nm"),
-                                width='stretch', key=f"gauge_tork_{render_key}")
+                                use_container_width=True, key=f"gauge_tork_{render_key}")
         gauge_rpm.plotly_chart(build_gauge(sim_rpm, "Devir", 0, 1600, 1300, 1500, " RPM"),
-                               width='stretch', key=f"gauge_rpm_{render_key}")
+                               use_container_width=True, key=f"gauge_rpm_{render_key}")
 
         # Status & vision
         if sensor_pred == 1:
@@ -701,7 +701,7 @@ with tab_live:
             </div>""", unsafe_allow_html=True)
 
             if proc_img is not None:
-                cam_ph.image(proc_img, caption="YOLOv8 Hata Lokalizasyonu", width='stretch')
+                cam_ph.image(proc_img, caption="YOLOv8 Hata Lokalizasyonu", use_container_width=True)
                 if label == "Defect":
                     alert_ph.markdown(f"""
                     <div class="alert-banner alert-critical">
@@ -840,7 +840,7 @@ with tab_logs:
                 pie_layout = DARK_LAYOUT.copy()
                 pie_layout.update(showlegend=False, margin=dict(l=0, r=0, t=10, b=0), height=260)
                 fig_pie.update_layout(**pie_layout)
-                st.plotly_chart(fig_pie, width='stretch')
+                st.plotly_chart(fig_pie, use_container_width=True)
 
             with bar_col:
                 st.markdown('<p class="section-label">Olay Sayıları</p>', unsafe_allow_html=True)
@@ -856,7 +856,7 @@ with tab_logs:
                     margin=dict(l=0, r=0, t=10, b=0), height=260,
                 )
                 fig_bar.update_layout(**bar_layout)
-                st.plotly_chart(fig_bar, width='stretch')
+                st.plotly_chart(fig_bar, use_container_width=True)
 
         st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
 
@@ -874,13 +874,13 @@ with tab_logs:
             ts_layout = DARK_LAYOUT.copy()
             ts_layout.update(margin=dict(l=0, r=0, t=10, b=0), height=200)
             fig_ts.update_layout(**ts_layout)
-            st.plotly_chart(fig_ts, width='stretch')
+            st.plotly_chart(fig_ts, use_container_width=True)
 
         # ── Data table ──────────────────────────────────────
         st.markdown('<p class="section-label">Tüm Kayıtlar</p>', unsafe_allow_html=True)
         st.dataframe(
             log_df.sort_values("zaman", ascending=False),
-            width='stretch',
+            use_container_width=True,
             hide_index=True,
             column_config={
                 "zaman":                  st.column_config.TextColumn("Zaman"),
